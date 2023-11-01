@@ -36,4 +36,17 @@ function determineWinner(userChoice, computerChoice){
 
 }
 
+function playGame(userChoice,computerChoice){
+    const computerChoice = getComputerchoice();
 
+}
+
+rockButton.addEventListener('click',function(){
+   playGame('rock') 
+})
+paperButton.addEventListener('click',function(){
+    playGame('paper') 
+ })
+ scissorButton.addEventListener('click',function(){
+    playGame('scissors') 
+ })
