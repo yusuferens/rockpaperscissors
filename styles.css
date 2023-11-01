@@ -1,4 +1,44 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background: linear-gradient(to right, #C88779, #52BE80);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
 
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    height:65vh;
+    width:50vh;
+    text-align: center;
+    gap: 30px;
+    
+    background-color: rgba(136, 240, 136);
+
+}
+.header{
+    position:absolute;
+    top:10%;
+    font-size: 34px;
+    text-align: center;
+}
+
+.choose-fighter{
+    margin-top: 0;
+    font-size: 32px;
+}
 .options-containers{
     display: flex;
     justify-content: center;
@@ -7,9 +47,9 @@
     margin: 0 10px;
     background-image: url(23568617.png);
     background-size:cover ;
-    background-color: white;
-    width: 200px;
-    height: 200px;
+    background-color: rgba(136, 240, 136, 0.76);
+    width: 125px;
+    height: 125px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -19,9 +59,9 @@
     margin: 0 10px;
     background-image: url(paper.png);
     background-size:cover ;
-    background-color: white;
-    width: 200px;
-    height: 200px;
+    background-color:rgba(136, 240, 136, 0.76);
+    width: 125px;
+    height: 125px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -31,10 +71,30 @@
     margin: 0 10px;
     background-image: url(scissor.png);
     background-size: cover;
-    background-color: white;
-    width: 200px;
-    height: 200px;
+    background-color:rgba(136, 240, 136, 0.76);
+    width: 125px;
+    height: 125px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
 }
+
+.replay{
+    margin: 0 10px;
+    font-weight: bolder;
+    font-size: 14px;
+    width: 125px;
+    height: 75px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #C88779;
+}
+
+.round-counter{
+    font-size: 16px;
+}
+.result{
+    text-align:center;
+}
+
