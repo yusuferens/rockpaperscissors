@@ -1,0 +1,25 @@
+.rock{
+    background-image: url(rock-576684_640.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.paper{
+    background-image: url(scroll-34696_640.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.scissors{
+    background-image: url(scissors-25982_640.png);
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
