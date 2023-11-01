@@ -1,17 +1,19 @@
 
-const rockButton = document.querySelector('[data-rock]')
-const scissorButton = document.querySelector('[data-scissors]')
-const paperButton = document.querySelector('[data-paper]')
-const playAgainButton = document.querySelector('[data-replay]')
-const roundCounter = document.querySelector('[data-round-counter]')
-const roundCounterComp = document.querySelector('[data-round-counter-comp]')
-const roundResult = document.querySelector('[data-result]')
+const rockButton = document.querySelector('.data-rock');
+const scissorButton = document.querySelector('.data-scissors');
+const paperButton = document.querySelector('.data-paper');
+const playAgainButton = document.querySelector('.data-replay');
+const winCounter = document.querySelector('.data-round-counter');
+const winCounterComp = document.querySelector('.data-round-counter-comp');
+const roundResult = document.querySelector('.data-result');
+
 
 
 function rpsGame(){
-    this.scorePlayer = 0;
-    this.scoreComputer = 0;
+    this.winCounter = 0;
+    this.winCounterComp = 0;
     this.currentRound = 1;
+    
 }
 
 function getComputerchoice(){
@@ -36,7 +38,7 @@ function determineWinner(userChoice, computerChoice){
 
 }
 
-function playGame(userChoice,computerChoice){
+function playGame(userChoice){
     const computerChoice = getComputerchoice();
 
 }

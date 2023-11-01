@@ -43,7 +43,7 @@ body{
     display: flex;
     justify-content: center;
 }
-.rock{
+.data-rock{
     margin: 0 10px;
     background-image: url(23568617.png);
     background-size:cover ;
@@ -55,7 +55,7 @@ body{
     cursor: pointer;
     
 }
-.paper{
+.data-paper{
     margin: 0 10px;
     background-image: url(paper.png);
     background-size:cover ;
@@ -67,7 +67,7 @@ body{
     cursor: pointer;
 }
 
-.scissors{
+.data-scissors{
     margin: 0 10px;
     background-image: url(scissor.png);
     background-size: cover;
@@ -79,7 +79,7 @@ body{
     cursor: pointer;
 }
 
-.replay{
+.data-replay{
     margin: 0 10px;
     font-weight: bolder;
     font-size: 14px;
@@ -91,10 +91,10 @@ body{
     background-color: #C88779;
 }
 
-.round-counter{
+.data-round-counter{
     font-size: 16px;
 }
-.result{
+.data-result{
     text-align:center;
 }
 
