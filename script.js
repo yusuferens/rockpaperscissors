@@ -13,6 +13,7 @@ function rpsGame(){
     this.winCounter = 0;
     this.winCounterComp = 0;
     this.currentRound = 1;
+    this.totalRounds = 5;
     
 }
 
@@ -40,6 +41,42 @@ function determineWinner(userChoice, computerChoice){
 
 function playGame(userChoice){
     const computerChoice = getComputerchoice();
+    const result = determineWinner(userChoice,computerChoice)
+    roundResult.textContent = result;
+    updateScores(result)
+
+    if(rpsGame.currentRound >=rpsGame.totalRounds){
+        declareWinner();
+    } else {
+        rpsGame.currentRound++;
+        updateRoundCounter();
+    }
+
+    function updateScores(result){
+        if(result === 'You win!'){
+            rpsGame.winCounter++
+        } else if(result ==='You lose!'){
+            rpsGame.winCounterComp++
+        }
+        winCounter.textContent = 'You = ${rpsGame.winCounter}';
+        compWinCount.textContent = 'Comp = ${rpsGame.winCounterComp}'
+    }
+    function updateRoundCounter(){
+        currentRoundDisplay.textContent = `Round:${rpsGame.currentRound}`
+
+}
+function declareWinner(){
+    if(rpsGame.winCounter > rpsGame.winCounterComp){
+        roundResult.textContent = 'You won the game!';
+        }else if(rpsGame.winCounter < rpsGame.winCounterComp){
+            roundResult.textContent = 'You lost the game!';
+            } else {
+                roundResult.textContent = 'It is a tie game.';
+    }
+
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorButton.disabled = true;
 
 }
 
@@ -52,3 +89,4 @@ paperButton.addEventListener('click',function(){
  scissorButton.addEventListener('click',function(){
     playGame('scissors') 
  })
+}
