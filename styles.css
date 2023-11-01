@@ -80,6 +80,7 @@ body{
 }
 
 .data-replay{
+    display: none;
     margin: 0 10px;
     font-weight: bolder;
     font-size: 14px;

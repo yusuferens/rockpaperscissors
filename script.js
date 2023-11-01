@@ -8,11 +8,14 @@ const roundResult = document.querySelector('.data-result');
 const currentRoundDisplay = document.querySelector('.data-round-counter');
 
 function rpsGame() {
+    this.compWinCount = 0;
     this.winCounter = 0;
     this.winCounterComp = 0;
     this.currentRound = 1;
     this.totalRounds = 5;
 }
+
+const game = new rpsGame();
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -41,32 +44,30 @@ function playGame(userChoice) {
     roundResult.textContent = result;
     updateScores(result);
 
-    if (rpsGame.currentRound >= rpsGame.totalRounds) {
+    if (game.currentRound >= game.totalRounds) {
         declareWinner();
     } else {
-        rpsGame.currentRound++;
+        game.currentRound++;
         updateRoundCounter();
     }
 }
 
 function updateScores(result) {
     if (result === 'You win!') {
-        rpsGame.winCounter++;
+        game.winCounter++;
     } else if (result === 'You lose!') {
-        rpsGame.winCounterComp++;
+        game.winCounterComp++;
     }
-    winCounter.textContent = `You = ${rpsGame.winCounter}`;
-    compWinCount.textContent = `Comp = ${rpsGame.winCounterComp}`;
+    winCounter.textContent = `You = ${game.winCounter}`;
+    compWinCount.textContent = `Computer = ${game.winCounterComp}`;
 }
 
-function updateRoundCounter() {
-    currentRoundDisplay.textContent = `Round: ${rpsGame.currentRound}`;
-}
+
 
 function declareWinner() {
-    if (rpsGame.winCounter > rpsGame.winCounterComp) {
+    if (game.winCounter > game.winCounterComp) {
         roundResult.textContent = 'You won the game!';
-    } else if (rpsGame.winCounter < rpsGame.winCounterComp) {
+    } else if (game.winCounter < game.winCounterComp) {
         roundResult.textContent = 'You lost the game.';
     } else {
         roundResult.textContent = 'It is a tie game.';
@@ -89,15 +90,16 @@ scissorButton.addEventListener('click', function () {
 });
 
 playAgainButton.addEventListener('click', function () {
-    // Reset the game when the "Play Again" button is clicked
-    rpsGame.winCounter = 0;
-    rpsGame.winCounterComp = 0;
-    rpsGame.currentRound = 1;
-    updateScores(''); // Clear the score display
-    updateRoundCounter(); // Reset the round display
-    roundResult.textContent = ''; // Clear the result display
-    playAgainButton.style.display = 'none'; // Hide the "Play Again" button
+   if(game.currentRound>= game.totalRounds){
+    game.winCounter = 0;
+    game.winCounterComp = 0;
+    game.currentRound = 1;
+    winCounter.textContent = 'You = 0';
+    compWinCount.textContent = 'Computer = 0';
+    roundResult.textContent = ''; 
+    playAgainButton.style.display = 'none'; 
     rockButton.disabled = false;
     paperButton.disabled = false;
     scissorButton.disabled = false;
+    }
 });
